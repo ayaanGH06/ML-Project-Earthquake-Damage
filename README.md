@@ -26,10 +26,6 @@ Download all three files and place them in:
 data/raw/
 ```
 
-The dataset files are **git-ignored** and should not be committed to the repository.
-
-Alternatively, if the project supports it, you can specify a different dataset location using the `EQ_DATA_DIR` environment variable or the `--data_dir` command-line flag.
-
 ## Project structure
 ```
 data/raw/          dataset CSVs (not committed)
