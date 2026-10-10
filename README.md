@@ -4,7 +4,7 @@ UE24CS352A - Machine Learning mini-project.
 Predict the damage grade (1 = low, 2 = medium, 3 = near-total destruction) of
 buildings hit by the 2015 Gorkha earthquake. Metric: micro-averaged F1.
 
-**Team:** <Syed Ayaan Hasan (PES2UG24CS545)> and <Sriniket Deeduvanu (PES2UG24CS521)>
+**Team:** Syed Ayaan Hasan (PES2UG24CS545) and Sriniket Deeduvanu (PES2UG24CS521)
 
 ## Dataset
 
