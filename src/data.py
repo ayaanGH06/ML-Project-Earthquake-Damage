@@ -15,6 +15,7 @@ RANDOM_STATE = 42
 TARGET = "damage_grade"
 ID_COL = "building_id"
 GEO_COLS = ["geo_level_1_id", "geo_level_2_id", "geo_level_3_id"]
+AGE_CAP = 100
 
 
 def get_data_dir(data_dir=None):
@@ -40,6 +41,19 @@ def train_val_split(X, y, val_size=0.2):
     )
 
 
+def clip_age(X, cap=AGE_CAP):
+    """Return a copy of X with `age` capped at `cap`.
+
+    The raw data contains placeholder-like ages (maximum 995). Capping them keeps
+    a handful of extreme values from distorting the scale of the feature.
+    Used before the scaled preprocessor (KNN, neural network); tree models use
+    the raw age because they are insensitive to extreme values.
+    """
+    X = X.copy()
+    X["age"] = X["age"].clip(upper=cap)
+    return X
+
+
 def _column_groups(X):
     categorical = X.select_dtypes(include="object").columns.tolist()
     numeric = [c for c in X.columns if c not in categorical and c not in GEO_COLS]
@@ -52,7 +66,7 @@ def build_scaled_preprocessor(X):
     Design choice: geo_level_1_id (31 regions) is one-hot encoded; geo_level_2/3
     (1,400 and 12,500 values) are dropped because one-hot would explode the
     feature count and using them as raw numbers is meaningless (they are IDs).
-    Revisit this if you want to squeeze out more accuracy.
+    Apply `clip_age` to the data before this preprocessor.
     """
     numeric, categorical = _column_groups(X)
     return ColumnTransformer(
