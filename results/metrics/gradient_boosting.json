@@ -1,0 +1,4 @@
+{
+  "model": "gradient_boosting",
+  "val_micro_f1": 0.7276913336275206
+}

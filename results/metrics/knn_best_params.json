@@ -1,0 +1,6 @@
+{
+  "n_neighbors": 51,
+  "weights": "uniform",
+  "val_micro_f1": 0.6802440475048445,
+  "majority_baseline": 0.5689069664818404
+}

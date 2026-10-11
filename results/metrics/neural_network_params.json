@@ -1,0 +1,12 @@
+{
+  "hidden_layer_sizes": [
+    256,
+    128,
+    64
+  ],
+  "alpha": 0.01,
+  "val_micro_f1_seed42": 0.6972237677711479,
+  "val_micro_f1_mean_3_seeds": 0.6970766741492552,
+  "val_micro_f1_std_3_seeds": 0.00010663220839030782,
+  "majority_baseline": 0.5689069664818404
+}

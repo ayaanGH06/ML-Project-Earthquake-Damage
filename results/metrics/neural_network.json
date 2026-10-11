@@ -1,0 +1,4 @@
+{
+  "model": "neural_network",
+  "val_micro_f1": 0.6972237677711479
+}
