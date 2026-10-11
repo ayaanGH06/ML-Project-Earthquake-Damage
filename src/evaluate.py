@@ -63,12 +63,18 @@ def evaluate_model(name, y_true, y_pred, save_dir="results"):
 
 
 def save_permutation_importance(name, model, X_val, y_val, n_rows=5000,
-                                n_repeats=5, random_state=42, save_dir="results"):
+                                n_repeats=5, random_state=42, save_dir="results",
+                                n_jobs=1):
     """Permutation importance of the raw input columns, saved to
     results/metrics/<name>_feature_importance.json.
 
     `model` must be a fitted pipeline that accepts the raw feature DataFrame.
     Importance = mean drop in validation micro-F1 when one column is shuffled.
+
+    n_jobs=1 on purpose: with n_jobs=-1 joblib copies the fitted model to every
+    worker process, which can exhaust shared memory / disk for a large random
+    forest ("No space left on device"). The models themselves still predict in
+    parallel internally.
     """
     from sklearn.inspection import permutation_importance
 
@@ -77,7 +83,7 @@ def save_permutation_importance(name, model, X_val, y_val, n_rows=5000,
     y_s = y_val.loc[X_s.index]
     imp = permutation_importance(
         model, X_s, y_s, scoring="f1_micro", n_repeats=n_repeats,
-        random_state=random_state, n_jobs=-1,
+        random_state=random_state, n_jobs=n_jobs,
     )
     result = {
         "model": name,
