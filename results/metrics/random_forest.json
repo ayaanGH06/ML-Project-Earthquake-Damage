@@ -1,4 +1,4 @@
 {
   "model": "random_forest",
-  "val_micro_f1": 0.6629381631204313
+  "val_micro_f1": 0.7315093724218645
 }
