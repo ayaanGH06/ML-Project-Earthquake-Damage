@@ -1,0 +1,101 @@
+[
+  {
+    "configuration":"500 iterations, more leaves",
+    "learning_rate":0.1,
+    "max_iter":500,
+    "max_leaf_nodes":63,
+    "actual_iterations":350,
+    "train_micro_f1":0.7913277053,
+    "val_micro_f1":0.7458605936,
+    "val_macro_f1":0.6928918285,
+    "seconds":34
+  },
+  {
+    "configuration":"More leaves",
+    "learning_rate":0.1,
+    "max_iter":250,
+    "max_leaf_nodes":63,
+    "actual_iterations":250,
+    "train_micro_f1":0.7773695318,
+    "val_micro_f1":0.741294296,
+    "val_macro_f1":0.6857613763,
+    "seconds":26
+  },
+  {
+    "configuration":"400 iterations",
+    "learning_rate":0.1,
+    "max_iter":400,
+    "max_leaf_nodes":31,
+    "actual_iterations":400,
+    "train_micro_f1":0.7674549117,
+    "val_micro_f1":0.7395675448,
+    "val_macro_f1":0.6838218001,
+    "seconds":28
+  },
+  {
+    "configuration":"More iterations",
+    "learning_rate":0.1,
+    "max_iter":250,
+    "max_leaf_nodes":31,
+    "actual_iterations":250,
+    "train_micro_f1":0.7523263622,
+    "val_micro_f1":0.7343297327,
+    "val_macro_f1":0.6763906775,
+    "seconds":21
+  },
+  {
+    "configuration":"Higher learning rate",
+    "learning_rate":0.15,
+    "max_iter":150,
+    "max_leaf_nodes":31,
+    "actual_iterations":150,
+    "train_micro_f1":0.7489495395,
+    "val_micro_f1":0.7308954164,
+    "val_macro_f1":0.6716704464,
+    "seconds":12
+  },
+  {
+    "configuration":"Baseline",
+    "learning_rate":0.1,
+    "max_iter":150,
+    "max_leaf_nodes":31,
+    "actual_iterations":150,
+    "train_micro_f1":0.7376199156,
+    "val_micro_f1":0.7276913336,
+    "val_macro_f1":0.6666122763,
+    "seconds":12
+  },
+  {
+    "configuration":"Lower learning rate",
+    "learning_rate":0.05,
+    "max_iter":150,
+    "max_leaf_nodes":31,
+    "actual_iterations":150,
+    "train_micro_f1":0.719781274,
+    "val_micro_f1":0.7161221005,
+    "val_macro_f1":0.6483274722,
+    "seconds":13
+  },
+  {
+    "configuration":"Fewer leaves",
+    "learning_rate":0.1,
+    "max_iter":150,
+    "max_leaf_nodes":15,
+    "actual_iterations":150,
+    "train_micro_f1":0.7194071374,
+    "val_micro_f1":0.7160261699,
+    "val_macro_f1":0.6490576966,
+    "seconds":10
+  },
+  {
+    "configuration":"Combined tuning",
+    "learning_rate":0.05,
+    "max_iter":250,
+    "max_leaf_nodes":15,
+    "actual_iterations":250,
+    "train_micro_f1":0.7121546431,
+    "val_micro_f1":0.7096563765,
+    "val_macro_f1":0.6412680506,
+    "seconds":16
+  }
+]

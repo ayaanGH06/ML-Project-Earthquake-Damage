@@ -1,0 +1,90 @@
+[
+  {
+    "configuration":"Leaf 2, more trees",
+    "n_estimators":300,
+    "max_depth":null,
+    "min_samples_leaf":2,
+    "class_weight":null,
+    "train_micro_f1":0.8685101688,
+    "val_micro_f1":0.7313942557,
+    "val_macro_f1":0.6645485558,
+    "seconds":22
+  },
+  {
+    "configuration":"Smaller leaves",
+    "n_estimators":100,
+    "max_depth":null,
+    "min_samples_leaf":2,
+    "class_weight":null,
+    "train_micro_f1":0.8672534536,
+    "val_micro_f1":0.7306843691,
+    "val_macro_f1":0.6646940404,
+    "seconds":6
+  },
+  {
+    "configuration":"More trees",
+    "n_estimators":200,
+    "max_depth":null,
+    "min_samples_leaf":5,
+    "class_weight":null,
+    "train_micro_f1":0.7823963929,
+    "val_micro_f1":0.7250820207,
+    "val_macro_f1":0.6518124322,
+    "seconds":11
+  },
+  {
+    "configuration":"Baseline",
+    "n_estimators":100,
+    "max_depth":null,
+    "min_samples_leaf":5,
+    "class_weight":null,
+    "train_micro_f1":0.7812164236,
+    "val_micro_f1":0.7239116671,
+    "val_macro_f1":0.6498714043,
+    "seconds":7
+  },
+  {
+    "configuration":"Smallest leaves",
+    "n_estimators":100,
+    "max_depth":null,
+    "min_samples_leaf":1,
+    "class_weight":null,
+    "train_micro_f1":0.9867517268,
+    "val_micro_f1":0.7233936417,
+    "val_macro_f1":0.667440265,
+    "seconds":8
+  },
+  {
+    "configuration":"Shallower",
+    "n_estimators":100,
+    "max_depth":20.0,
+    "min_samples_leaf":5,
+    "class_weight":null,
+    "train_micro_f1":0.7407521105,
+    "val_micro_f1":0.7067976439,
+    "val_macro_f1":0.6264311637,
+    "seconds":6
+  },
+  {
+    "configuration":"Balanced weights",
+    "n_estimators":100,
+    "max_depth":null,
+    "min_samples_leaf":5,
+    "class_weight":"balanced",
+    "train_micro_f1":0.7412317728,
+    "val_micro_f1":0.6742771628,
+    "val_macro_f1":0.6502010499,
+    "seconds":6
+  },
+  {
+    "configuration":"Shallow + balanced",
+    "n_estimators":200,
+    "max_depth":20.0,
+    "min_samples_leaf":4,
+    "class_weight":"balanced",
+    "train_micro_f1":0.7063795088,
+    "val_micro_f1":0.6632067689,
+    "val_macro_f1":0.6414160717,
+    "seconds":12
+  }
+]

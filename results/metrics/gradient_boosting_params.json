@@ -1,0 +1,11 @@
+{
+  "configuration": {
+    "name": "500 iterations, more leaves",
+    "learning_rate": 0.1,
+    "max_iter": 500,
+    "max_leaf_nodes": 63
+  },
+  "iterations_used": 350,
+  "train_micro_f1": 0.791327705295472,
+  "val_micro_f1": 0.745860593618695
+}

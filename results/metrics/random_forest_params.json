@@ -1,0 +1,11 @@
+{
+  "configuration": {
+    "name": "Leaf 2, more trees",
+    "n_estimators": 300,
+    "max_depth": null,
+    "min_samples_leaf": 2,
+    "class_weight": null
+  },
+  "train_micro_f1": 0.8685101688411359,
+  "val_micro_f1": 0.7313942556742964
+}

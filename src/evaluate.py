@@ -43,7 +43,7 @@ def evaluate_model(name, y_true, y_pred, save_dir="results"):
             "support": int(r["support"]),
         }
 
-    ConfusionMatrixDisplay.from_predictions(y_true, y_pred, cmap="Blues")
+    ConfusionMatrixDisplay.from_predictions(y_true, y_pred, cmap="Blues", values_format="d")
     plt.title(f"{name} - confusion matrix")
     plt.savefig(save_dir / "figures" / f"{name}_confusion.png", dpi=150, bbox_inches="tight")
     plt.show()
