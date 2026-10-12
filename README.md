@@ -35,7 +35,7 @@ src/evaluate.py    shared metrics + confusion matrix plots
 results/           saved figures and metric JSONs
 report/            one-page write-up (PDF)
 presentation/      slide deck
-main.py            quick end-to-end demo
+main.py            retrains the final model and prints the saved results table
 ```
 
 ## Setup and run
@@ -43,7 +43,8 @@ main.py            quick end-to-end demo
 ```bash
 git clone https://github.com/ayaanGH06/ML-Project-Earthquake-Damage.git && cd ML-Project-Earthquake-Damage/
 pip install -r requirements.txt
-python main.py --data_dir data/raw
+python main.py --data_dir data/raw     # retrain the final model, then print the results table
+python main.py --results_only          # only print the saved results (no data needed)
 ```
 **Google Colab:** open any notebook in `notebooks/`, edit the paths in the first
 (setup) cell, and run all cells.
@@ -55,4 +56,17 @@ python main.py --data_dir data/raw
 | Random Forest (`04`), Gradient boosting (`05`), Comparison (`06`) | Sriniket Deeduvanu |
 
 ## Results
-_To Be filled. Fill in the final comparison table here (model, validation micro-F1)._
+All models use the same stratified 80/20 split (seed 42: 208,480 training and 52,121 validation buildings).
+Scores are on the validation set. The competition test set has no public labels and was not scored.
+
+| Model | Selected setting | Validation micro-F1 | macro-F1 | Recall, grades 1 / 2 / 3 |
+|---|---|---|---|---|
+| **Gradient boosting** | learning rate 0.1, 63 leaves, stopped at 350 iterations | **0.7459** | **0.6929** | 0.52 / 0.85 / 0.63 |
+| Random forest | 300 trees, minimum leaf size 2 | 0.7314 | 0.6645 | 0.45 / 0.86 / 0.59 |
+| Neural network | hidden layers 256-128-64, L2 0.01 | 0.6972 | 0.6328 | 0.44 / 0.81 / 0.57 |
+| KNN | k = 51, uniform weights | 0.6802 | 0.6066 | 0.40 / 0.82 / 0.52 |
+| Baseline | always predict grade 2 | 0.5689 | - | - |
+
+Gradient boosting is the final model. Location (`geo_level_1_id`) is the most important feature for both tree models.
+Main limitations: hyperparameters were chosen on the same validation split that is reported, there is a single split,
+and duplicate buildings may favour high-capacity models. See `report/` for the write-up and `presentation/` for the slides.
